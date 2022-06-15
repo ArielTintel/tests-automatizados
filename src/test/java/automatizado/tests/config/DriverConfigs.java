@@ -13,7 +13,7 @@ public abstract class DriverConfigs {
 
     private static final String URL_BASE = "file:///home/arieltintel/dev/projetos/QA/tests-automatizados/src/sistema/login.html";
     private static final String CAMINHO_DRIVER = "src/driver/chromedriver";
-    
+
     @BeforeClass
     public static void iniciar(){
         System.setProperty("webdriver.chrome.driver", CAMINHO_DRIVER);
