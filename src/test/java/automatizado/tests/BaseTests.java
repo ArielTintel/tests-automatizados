@@ -1,30 +1,30 @@
-package automatizado.tests.config;
+package automatizado.tests;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public abstract class DriverConfigs {
+public abstract class BaseTests {
 
     protected static WebDriver driver;
 
-    private static final String URL_BASE = "file:///home/arieltintel/dev/projetos/QA/tests-automatizados/src/sistema/login.html";
+    private static final String URL_BASE = "file:///home/arieltintel/dev/projetos/automacao/tests-automatizados/src/sistema/login.html";
     private static final String CAMINHO_DRIVER = "src/driver/chromedriver";
 
-    @BeforeClass
-    public static void iniciar(){
+    @Before
+    public void iniciar(){
         System.setProperty("webdriver.chrome.driver", CAMINHO_DRIVER);
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.get(URL_BASE);
     }
 
-    @AfterClass
-    public static void finalizar(){
+    @After
+    public void finalizar(){
         driver.quit();
     }
 
