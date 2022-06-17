@@ -1,23 +1,22 @@
 package automatizado.tests;
 
 import automatizado.pages.LoginPage;
-import automatizado.tests.config.DriverConfigs;
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginTest extends DriverConfigs {
+public class LoginTest extends BaseTests {
 
     private static final String MENSAGEM_ERRO_CAMPO_VAZIO = "informe usuário e senha, os campos não podem ser brancos.";
     private static final String MENSAGEM_ERRO_EMAIL_OU_SENHA = "e-mail ou senha inválidos";
 
     private static LoginPage loginPage;
 
-    @BeforeClass
-    public static void initTests(){
+    @Before
+    public void init(){
         loginPage = new LoginPage(driver);
     }
 

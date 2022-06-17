@@ -1,6 +1,5 @@
 package automatizado.pages;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,18 +20,13 @@ public class LoginPage extends BasePO{
     private WebElement botaoEntrar;
 
     @FindBy(id = "mensagem")
-    private WebElement mensagemDeErro;
+    private WebElement mensagemErro;
 
     @FindBy(className = "close")
     private WebElement botaoFecharMensagemErro;
 
     public String getMensagem(){
-        return mensagemDeErro.getText().toLowerCase();
-    }
-
-    public void digitar(WebElement campo, String texto){
-        campo.clear();
-        campo.sendKeys(texto, Keys.TAB);
+        return mensagemErro.getText().toLowerCase();
     }
 
     public void efetuarLogin(String email, String senha) {
@@ -40,6 +34,5 @@ public class LoginPage extends BasePO{
         digitar(camposenha, senha);
         botaoEntrar.click();
     }
-
 
 }
