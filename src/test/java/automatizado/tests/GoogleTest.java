@@ -1,20 +1,19 @@
 package automatizado.tests;
 
 import automatizado.pages.GooglePage;
-import automatizado.tests.config.DriverConfigs;
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class GoogleTest extends DriverConfigs {
+public class GoogleTest extends BaseTests {
 
     private static GooglePage googlePage;
 
-    @BeforeClass
-    public static void initTests(){
+    @Before
+    public void initTests(){
         driver.get("https://www.google.com/");
         googlePage = new GooglePage(driver);
     }

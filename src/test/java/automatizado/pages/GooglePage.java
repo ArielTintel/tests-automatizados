@@ -8,22 +8,22 @@ import org.openqa.selenium.support.FindBy;
 public class GooglePage extends BasePO {
 
     @FindBy(name = "q")
-    public WebElement barraDePesquisas;
+    public WebElement barraPesquisas;
 
     @FindBy(id = "result-stats")
-    public WebElement resultadoDePesquisas;
+    public WebElement resultadoPesquisas;
 
     public GooglePage(WebDriver driver) {
         super(driver);
     }
 
     public void pesquisar(String textoPesquisa){
-        barraDePesquisas.clear();
-        barraDePesquisas.sendKeys(textoPesquisa, Keys.ENTER);
+        barraPesquisas.clear();
+        barraPesquisas.sendKeys(textoPesquisa, Keys.ENTER);
     }
 
     public String getResultadoPesquisa(){
-        return resultadoDePesquisas.getText().toLowerCase();
+        return resultadoPesquisas.getText().toLowerCase();
     }
 
 }
